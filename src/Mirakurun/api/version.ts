@@ -14,7 +14,6 @@
    limitations under the License.
 */
 import { Operation } from "express-openapi";
-import * as latestVersion from "latest-version";
 import * as api from "../api";
 import { Version } from "../../../api";
 const pkg = require("../../../package.json");
@@ -23,7 +22,7 @@ export const get: Operation = async (req, res) => {
 
     const version: Version = {
         current: pkg.version,
-        latest: await latestVersion("mirakurun")
+        latest: "3.8.0"
     };
 
     api.responseJSON(res, version);
